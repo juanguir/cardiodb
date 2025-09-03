@@ -1,0 +1,19 @@
+services:
+  cardio_db_server:
+    image: postgres:14
+    container_name: cardio_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: cardio_db
+      POSTGRES_USER: cardio_user
+      POSTGRES_PASSWORD: cardio_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+volumes:
+  postgres_data:
