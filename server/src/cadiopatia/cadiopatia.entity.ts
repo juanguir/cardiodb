@@ -7,7 +7,31 @@ export class Cadiopatia {
   id: number;
 
   @Column()
-  question: string;
+  tipo:string;
+
+  @Column()
+  familia: string;
+
+  @Column()
+  paciente:string;
+
+  @Column()
+  nhc:string;
+
+  @Column()
+  nombre:string;
+
+  @Column({length:1})
+  sexo:string;
+
+  @Column()
+  f_nacimiento:Date;
+
+  @Column()
+  edad_al_diagnostico:Int16Array;
+
+  
+
 
   @Column('jsonb', { nullable: true })
   options: string[];
